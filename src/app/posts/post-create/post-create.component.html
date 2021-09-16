@@ -1,9 +1,15 @@
 <!-- [value] will directly target the value of property and bind the value inside "" to it -->
 <!-- <textarea rows="6" [value]="'Test'"></textarea>    Test as string-->
 <!-- <textarea rows="6" [value]="newPost"></textarea> calling newPost variable -->
-<textarea rows="6" [value]="newPost" #postInput></textarea>
+<!-- <textarea rows="6" [value]="newPost" #postInput></textarea> -->
+
+<!-- COMBINE setting and reading the value: -->
+<!-- ngModel is angulat feature(called direvtive), instruction you place in html element
+ngModel will listen to the  user input and emmit that data to us and also store new data in the text area and output it-->
+<!-- We need to bind ngModel into a new property -->
+<textarea rows="6" [(ngModel)]="enteredValue"></textarea>
 <hr>
-<button (click)="onAddPost(postInput)">Save Post!</button>
+<button (click)="onAddPost()">Save Post!</button>
 
 <!-- Use the variable with string interpollation{{}} here: -->
 <p>{{ newPost }}</p>
