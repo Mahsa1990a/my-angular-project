@@ -7,7 +7,11 @@
 <!-- ngModel is angulat feature(called direvtive), instruction you place in html element
 ngModel will listen to the  user input and emmit that data to us and also store new data in the text area and output it-->
 <!-- We need to bind ngModel into a new property -->
-<textarea rows="6" [(ngModel)]="enteredValue"></textarea>
+
+<mat-form-field>
+  <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
+</mat-form-field>
+
 <hr>
 <button (click)="onAddPost()">Save Post!</button>
 
