@@ -8,10 +8,14 @@ import { Component } from '@angular/core'; // Component decorator
 export class PostCreateComponent { // we turn typescript class to component angular understand by adding @Component
 
   // property or variable in class(define it without let or const):
-  newPost = ''
+  newPost = 'NO CONTENT';
 
-  onAddPost() { // add this method to pass it as a click event in html
+  onAddPost(postInput: HTMLTextAreaElement) { // add this method to pass it as a click event in html
     // alert("Post added!");
-    this.newPost = "The user's post"
+
+    console.log("postInput: ", postInput); //<textarea rows="6"></textarea>
+    console.dir("postInput: ", postInput); //will get js object propetries
+    // this.newPost = "The user's post"    UPDATE to acceess to the value we're typing in textarea
+    this.newPost = postInput.value;
   }
 }

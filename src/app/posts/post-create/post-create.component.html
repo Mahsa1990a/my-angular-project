@@ -1,6 +1,9 @@
-<textarea rows="6"></textarea>
+<!-- [value] will directly target the value of property and bind the value inside "" to it -->
+<!-- <textarea rows="6" [value]="'Test'"></textarea>    Test as string-->
+<!-- <textarea rows="6" [value]="newPost"></textarea> calling newPost variable -->
+<textarea rows="6" [value]="newPost" #postInput></textarea>
 <hr>
-<button (click)="onAddPost()">Save Post!</button>
+<button (click)="onAddPost(postInput)">Save Post!</button>
 
 <!-- Use the variable with string interpollation{{}} here: -->
 <p>{{ newPost }}</p>
