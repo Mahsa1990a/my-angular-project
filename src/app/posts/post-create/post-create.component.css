@@ -1,13 +1,6 @@
 /* This styles will scop only for post component
 means we can you textarea for another component and style them in their css */
 
-mat-card {
-  /* For centering */
-  width: 80%;
-  margin: auto;
-  /* For centering */
-}
-
 mat-form-field,
 textarea {
   width: 100%;

@@ -1,4 +1,7 @@
 main {
   margin-top: 1rem;
-
+  /* Centered */
+  width: 80%;
+  margin: auto;
+  /* Centered */
 }

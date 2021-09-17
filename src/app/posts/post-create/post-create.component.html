@@ -13,9 +13,7 @@ ngModel will listen to the  user input and emmit that data to us and also store 
   <mat-form-field>
     <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
   </mat-form-field>
-  <button mat-raised-button color="accent" (click)="onAddPost()">Save Post!
+  <button mat-raised-button color="accent" (click)="onAddPost()">
+    Save Post!
   </button>
 </mat-card>
-
-<!-- Use the variable with string interpollation{{}} here: -->
-<p>{{ newPost }}</p>
