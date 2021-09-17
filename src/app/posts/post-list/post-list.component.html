@@ -1,8 +1,16 @@
-<mat-accordion>
-  <mat-expansion-panel>
+<!-- If you want to expand more that 1 post => muliti=true -->
+<!-- *ngIf => if we have post, then render -->
+
+<mat-accordion multi=true *ngIf="posts.length > 0">
+  <!-- loop through posts with structural directive (*ngFor)-->
+  <!-- (*ngFor) is a helper tool that allows you to repeat an element as many as you want -->
+  <mat-expansion-panel *ngFor="let post of posts">
     <mat-expansion-panel-header>
-      The expansion title!
+      {{ post.title }}
     </mat-expansion-panel-header>
-    <p>I am in an expansion panel!</p>
+    <p>{{ post.content }}</p>
   </mat-expansion-panel>
 </mat-accordion>
+
+<!-- else: -->
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No Post Added Yet!</p>
