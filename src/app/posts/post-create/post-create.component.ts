@@ -3,6 +3,7 @@ import { Component } from '@angular/core'; // Component decorator
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
+  styleUrls: ['./post-create.component.css'] // we can add custom style
 })
 
 export class PostCreateComponent { // we turn typescript class to component angular understand by adding @Component
