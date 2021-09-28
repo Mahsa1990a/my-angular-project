@@ -4,14 +4,17 @@
 <!-- <textarea rows="6" [value]="newPost" #postInput></textarea> -->
 
 <!-- COMBINE setting and reading the value: -->
-<!-- ngModel is angulat feature(called direvtive), instruction you place in html element
+<!-- ngModel is angular feature(called directive), instruction you place in html element
 ngModel will listen to the  user input and emmit that data to us and also store new data in the text area and output it-->
 <!-- We need to bind ngModel into a new property -->
 
 <!-- mat-card => Create card look: -->
 <mat-card>
   <mat-form-field>
-    <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
+    <input matInput type="text" [(ngModel)]="enteredTitle" />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
   </mat-form-field>
   <button mat-raised-button color="accent" (click)="onAddPost()">
     Save Post!

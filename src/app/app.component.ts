@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-angular-project';
+  // title = 'my-angular-project'; over write title:
+  storedPosts = [];
+
+  onPostAdded(post) { // as a methode(function) // pass onPostAdded into html
+    this.storedPosts.push(post); // push the new post on the list
+  }
 }

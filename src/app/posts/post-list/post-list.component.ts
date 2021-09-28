@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'; // Component decorator
+import { Component, Input } from '@angular/core'; // Component decorator
+// adding Input decorator to make posts bindable
 
 @Component({
   selector: 'app-post-list',
@@ -12,5 +13,5 @@ export class PostListComponent {
   //   { title: 'Second Post', content: 'This is a POST2' },
   //   { title: 'Third Post', content: 'This is a POST3' }
   // ]
-  posts = [];
+  @Input() posts = []; // after adding @Input() we can bind to posts from outside(only from parent component=> app)
 }
