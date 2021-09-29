@@ -4,6 +4,8 @@
 // 5. needs to add decorator(Output):
 import { Component, EventEmitter, Output } from '@angular/core'; // Component decorator
 
+import { Post } from "../post.model";
+
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
@@ -19,13 +21,13 @@ export class PostCreateComponent { // we turn typescript class to component angu
   // 2. create new EventEmitter (postCreated is an event)
   // postCreated = new EventEmitter(); UPDATE After adding Output
   // 6. add decorator here:
-  @Output() postCreated = new EventEmitter(); //@output turns postCreated to an event you can listen to it from the outside(outside means parent component: app.component)
+  @Output() postCreated = new EventEmitter<Post>(); //@output turns postCreated to an event you can listen to it from the outside(outside means parent component: app.component)
 
   // onAddPost(postInput: HTMLTextAreaElement) { // add this method to pass it as a click event in html
   onAddPost() { // add this method to pass it as a click event in html
 
     // create a post(new js object):
-    const post = {
+    const post: Post = {
       title: this.enteredTitle,
       content: this.enteredContent
     };
