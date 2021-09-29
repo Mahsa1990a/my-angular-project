@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core'; // Component decorator
 // adding Input decorator to make posts bindable
 
 import { Post } from "../post.model";
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-post-list',
@@ -17,4 +18,10 @@ export class PostListComponent {
   // ]
   @Input() posts: Post[] = []; // after adding @Input() we can bind to posts from outside(only from parent component=> app)
   //             We got a list of Post
+
+  // postsService: PostsService; 1
+
+  constructor(public postsService: PostsService) { // constructor is a function which is called whenever angular creates new instance of the main component
+    // this.postsService = postsService; 2          instead of 1, 2 we add public
+  }
 }
