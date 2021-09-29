@@ -3,6 +3,7 @@
 // 4. how to listen to that? we have to make angular aware that postCreated is an event to which you can listen form outside
 // 5. needs to add decorator(Output):
 import { Component, EventEmitter, Output } from '@angular/core'; // Component decorator
+import { NgForm } from '@angular/forms';
 
 import { Post } from "../post.model";
 
@@ -24,12 +25,17 @@ export class PostCreateComponent { // we turn typescript class to component angu
   @Output() postCreated = new EventEmitter<Post>(); //@output turns postCreated to an event you can listen to it from the outside(outside means parent component: app.component)
 
   // onAddPost(postInput: HTMLTextAreaElement) { // add this method to pass it as a click event in html
-  onAddPost() { // add this method to pass it as a click event in html
+  onAddPost(form: NgForm) { // add this method to pass it as a click event in html
 
+    if (form.invalid) { // doesn't let us submit empty form
+      return;
+    }
     // create a post(new js object):
     const post: Post = {
-      title: this.enteredTitle,
-      content: this.enteredContent
+      // title: this.enteredTitle,
+      title: form.value.title, // the name in input html
+      // content: this.enteredContent
+      content: form.value.content
     };
     // 3. pass it inside onAddPost and emit it and pass "post" as an argument:
     this.postCreated.emit(post);
